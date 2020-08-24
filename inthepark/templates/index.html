@@ -64,7 +64,15 @@
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
 
                 {% if user.is_authenticated %}
-					<a class="lead" href="{% url 'common:logout' %}">{{ user.username }} (로그아웃)</a>
+					<a class="login100-form-title p-b-33" href="{% url 'common:logout' %}">{{ user.username }} (로그아웃)</a>
+					<div class="text-center">
+                    	<span class="txt1">
+							Go Seoul Map?
+						</span>
+                    	<a href="/map/" class="txt2 hov1">
+							Go
+                    	</a>
+                	</div>
                 {% else %}
 				<form  method="post" class="post-form" action="{% url 'common:login' %}">
                     {% csrf_token %}
@@ -102,14 +110,7 @@
 					</div>
 				</form>
                 {% endif %}
-                <div class="text-center">
-                    <span class="txt1">
-							Go Seoul Map?
-                    </span>
-                    <a href="/map/" class="txt2 hov1">
-							Go
-                    </a>
-                </div>
+
 
 			</div>
 		</div>
