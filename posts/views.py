@@ -37,7 +37,7 @@ def write_post(request, p_idx):
         if post_form.is_valid():
             post_form.save()
             path = '/posts/{}/detail'.format(p_idx)
-            return  redirect(path)
+            return redirect(path)
         # post_form = Post(p_idx=p_idx, author=request.user, starpoint=request.POST['starpoint'], contents=request.POST['contents'], images=request.FILES['images'])
         # post_form.save()
         # return redirect('posts:detail')
